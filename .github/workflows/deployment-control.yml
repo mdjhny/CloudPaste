@@ -1,7 +1,7 @@
 name: 🎛️ 部署控制面板[⭐Click ME] / Deployment Control Panel
 
 env:
-  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"   # 强制 JS Actions 用 Node 24 运行
 on:
   workflow_dispatch:
     inputs:
@@ -44,7 +44,7 @@ jobs:
 
     steps:
       - name: 📥 检出代码
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 📋 读取当前配置状态
         id: read_config
